@@ -1,0 +1,29 @@
+@startuml
+title Project2_Shapes UML Diagram
+
+interface Movable {
+  + move() : void
+}
+
+interface Adjustable {
+  + resize() : void
+}
+
+abstract class Shape {
+  - color : String
+  + draw() : void
+}
+
+class Circle extends Shape {
+  - radius : double
+  + getArea() : double
+}
+
+class MovableCircle extends Circle implements Movable, Adjustable {
+  - x : double
+  - y : double
+  + move() : void
+  + resize() : void
+}
+
+@enduml
